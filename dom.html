@@ -1,0 +1,114 @@
+<!-- dom = document object modle! -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model</title>
+</head>
+
+<body>
+    <header>Welcome to my blog website</header>
+    <main>
+        <section id="blogs">
+            <h2>Blogs List</h2>
+            <ul id='blog-list'>
+                <li>blog-1</li>
+                <li>blog-2</li>
+                <li>blog-3</li>
+                <li>blog-4</li>
+            </ul>
+        </section>
+        <section id='blogs'>
+            <article class="blog">
+                <h3>My Awesome Blog Website 1</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, commodi eveniet. Quas, quidem quod aliquid animi laboriosam eligendi, rerum saepe nihil tempora placeat a quia ut corrupti sequi esse consectetur.</p>
+
+            </article>
+            <article id="secondBlog" class="blog">
+                <h3 id="secondTitle">My Awesome Blog Website 2</h3>
+                <p> Rem corporis deleniti, numquam commodi earum nulla quas temporibus nesciunt impedit porro, possimus doloribus dicta ex veritatis? Repellat magnam enim, voluptatum placeat dolorem magni veritatis ducimus sunt distinctio. Sint, deserunt?</p>
+
+            </article>
+            <article class="blog">
+                <h3>My Awesome Blog Website 3</h3>
+                <p>Explicabo impedit dolorum quod voluptatum rem laboriosam nobis reiciendis veritatis iusto, eos harum error fugiat aliquam accusamus commodi culpa obcaecati a similique recusandae, eius dignissimos ut quas! Deleniti, ipsa neque.</p>
+
+            </article>
+        </section>
+    </main>
+
+    <script>
+        const students = [{
+            name: 'simon',
+            age: 13,
+            height: 40
+        }];
+        for (const student of students) {
+            //  console.log(student.name);
+        }
+        console.log(document.body)
+        const blogTitle = document.getElementsByTagName('h3');
+        for (const h3 of blogTitle) {
+            // console.log(h3.innerText);
+        }
+        const paragraphTitle = document.getElementsByTagName('p')
+        for (const p of paragraphTitle) {
+            //  console.log(p);
+        }
+        const second = document.getElementById('secondTitle');
+        second.style.background = 'red';
+        second.style.padding = '10px';
+        second.style.color = '#fff';
+        second.style.textAlign = 'center';
+        second.innerText = 'Js just Awesome';
+
+        //create the Element
+        const li = document.createElement('li');
+        li.innerText = 'blog-5';
+        //where to 
+        const ul = document.getElementById('blog-list');
+        //add
+        ul.appendChild(li);
+
+        // create article
+        const article = document.createElement('article');
+        article.classList.add('blog')
+            //    const h3 = document.createElement('h3');
+            //     h3.innerText = 'My Awesome Blog Website 4';
+            //     const p =  document.createElement('p');
+            //     p.innerText = 'Explicabo impedit dolorum quod voluptatum rem laboriosam nobis reiciendis veritatis iusto, eos harum error fugiat aliquam accusamus commodi culpa obcaecati a similique recusandae, eius dignissimos ut quas! Deleniti, ipsa neque.';
+            //where to 
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(article);
+        // add
+        // article.appendChild(h3);
+        // article.appendChild(p);
+        article.innerHTML = `
+        <h3>My Awesome Blog Website 4</h3>
+        <p>Explicabo impedit dolorum quod voluptatum rem laboriosam nobis reiciendis veritatis iusto, eos harum error fugiat aliquam accusamus commodi culpa obcaecati a similique recusandae, eius dignissimos ut quas! Deleniti, ipsa neque</p>
+        `
+
+
+        //blog style
+        const blog = document.getElementsByClassName('blog');
+        for (const blogs of blog) {
+            blogs.style.border = '2px solid orange'
+            blogs.style.borderRadius = '12px'
+            blogs.style.padding = '5px';
+            blogs.style.marginBottom = '20px';
+        }
+
+
+
+        // document.getElementsTagName();
+        // document.getElementByClassName();
+        // document.getElementById();
+        // document.querySelector('.');
+        // document.querySelectorAll('#');
+    </script>
+</body>
+
+</html>
